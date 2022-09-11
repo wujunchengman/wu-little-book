@@ -1,17 +1,11 @@
-import { defineUserConfig } from "vuepress";
+import { defaultTheme, defineUserConfig } from "vuepress";
 
 export default defineUserConfig({
   lang: "zh-CN",
   title: "吴俊城",
   description: "知识的总结",
-});
-
-const { defaultTheme } = require("@vuepress/theme-default");
-
-module.exports = {
   theme: defaultTheme({
     // 在这里进行配置
-    base: "",
     repoLabel: "我的博客",
     repo: "https://cnblogs.com/wujuncheng",
     navbar: [
@@ -48,6 +42,10 @@ module.exports = {
               }
             ]
           }],
+      },
+      {
+        text:"Linux",
+        link:"/Linux"
       },
       {
         text: "VS Code的插件与玩法",
@@ -91,6 +89,10 @@ module.exports = {
           children: ["20220608_DynamicListView"],
         },
       ],
+      "/Linux": [
+        "/Linux/DualNetworkConfiguration.md"
+      ]
     },
   }),
-};
+});
+
