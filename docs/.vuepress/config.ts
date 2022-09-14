@@ -1,6 +1,7 @@
 import { defaultTheme, defineUserConfig } from "vuepress";
 
 export default defineUserConfig({
+  port: 4624,
   lang: "zh-CN",
   title: "吴俊城",
   description: "知识的总结",
@@ -51,7 +52,19 @@ export default defineUserConfig({
         text: "VS Code的插件与玩法",
         link: "vscode",
       },
-
+      {
+        text:"Java篇",
+        children: [
+          {
+            text: "Maven",
+            link: "/Java/Maven/Install.md"
+          },
+          {
+            text: "Spring Boot",
+            link: "/Java/SpringBoot/"
+          }
+        ]
+      }
       // 字符串 - 页面文件路径
       // '/bar/README.md',
     ],
@@ -91,6 +104,9 @@ export default defineUserConfig({
       ],
       "/Linux": [
         "/Linux/DualNetworkConfiguration.md"
+      ],
+      "/Java/Maven": [
+        "/Java/Maven/Install.md"
       ]
     },
   }),
