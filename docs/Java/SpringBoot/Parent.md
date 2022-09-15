@@ -1,0 +1,3 @@
+# Spring Boot 的 Parent
+
+Spring Boot通过Parent预先通过properties和dependencyManagement定义了众多主流包的版本（Maven项目管理），在后续项目中需要使用某种技术时，仅需添加对应的依赖，无需指定版本，所有的版本由Spring Boot统一管理，避免了依赖包冲突

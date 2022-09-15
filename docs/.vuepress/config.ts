@@ -107,6 +107,11 @@ export default defineUserConfig({
       ],
       "/Java/Maven": [
         "/Java/Maven/Install.md"
+      ],
+      "/Java/SpringBoot":[
+        "/Java/SpringBoot/Index.md",
+        "/Java/SpringBoot/HelloWorld.md"
+
       ]
     },
   }),

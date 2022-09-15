@@ -12,16 +12,20 @@ Spring Boot是用来简化Spring项目开发的，所以最后的核心还是会
 
 [Spring Boot官网在线生成器]("https://start.spring.io/")
 
+![官网生成Spring Boot项目](./images/spring_initializr.png)
+
 在官网的生成器中创建填写上对应的项目信息，添加所需要的依赖，点击Generate按钮，会自动下载一个对应的压缩包，将这个压缩包解压缩便是完整的项目
 
 ## 通过IDEA创建Spring Boot项目
 
 IDEA是目前Java开发中使用得最多的开发工具，其旗舰版内置了对Spring的支持，在创建代码时提供了对应的生成器选项
 
+![填入项目信息](./images/spring_init_idea_01.png)
 
-
-
+![指定版本与依赖](./images/spring_init_idea_02.png)
 
 IDEA的社区版是移除了Spring的支持的，因此社区版并不能拿来开发Spring Boot项目，此时要么用IDEA的旗舰版，要么用Eclipse或者VS Code
 
-## Eclipse
+## Eclipse/VS Code
+
+Spring提供了对应的插件，安装上对应的插件，就可以创建Spring Boot项目了，这里有机会再详述，操作都差不多，明白了生成器的每个选项代表什么都能轻松生成
