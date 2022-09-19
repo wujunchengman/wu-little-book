@@ -92,8 +92,10 @@ export default defineUserConfig({
       ],
       "/AspNetCore/": [
         {
-          text: "Reference",
-          children: ["/reference/cli.md", "/reference/config.md"],
+          text: "鉴权授权",
+          children: [
+            "/AspNetCore/Authorization/Sample.md",
+             "/reference/config.md"],
         },
       ],
       "/WPF/": [
