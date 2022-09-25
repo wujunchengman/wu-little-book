@@ -112,7 +112,8 @@ export default defineUserConfig({
       ],
       "/Java/SpringBoot":[
         "/Java/SpringBoot/Index.md",
-        "/Java/SpringBoot/HelloWorld.md"
+        "/Java/SpringBoot/HelloWorld.md",
+        "/Java/SpringBoot/Simplified.md"
 
       ]
     },
