@@ -94,6 +94,9 @@ export default defineUserConfig({
         {
           text: "鉴权授权",
           children: [
+            
+            "/AspNetCore/Authorization/AuthenticationAndAuthorization.md",
+            "/AspNetCore/Authorization/HelloAuthentication.md",
             "/AspNetCore/Authorization/Sample.md",
              "/reference/config.md"],
         },
