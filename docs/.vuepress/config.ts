@@ -49,6 +49,10 @@ export default defineUserConfig({
         link:"/Linux"
       },
       {
+        text:"基础设施",
+        link:"/Infrastructure/NginxProxyLocalServer.md"
+      },
+      {
         text: "VS Code的插件与玩法",
         link: "vscode",
       },
@@ -92,6 +96,12 @@ export default defineUserConfig({
       ],
       "/AspNetCore/": [
         {
+          text:"基础部分",
+          children:[
+            "/AspNetCore/Basic/Startup.md"
+          ]
+        },
+        {
           text: "鉴权授权",
           children: [
             
@@ -109,6 +119,9 @@ export default defineUserConfig({
       ],
       "/Linux": [
         "/Linux/DualNetworkConfiguration.md"
+      ],
+      "/Infrastructure":[
+        "/Infrastructure/NginxProxyLocalServer.md"
       ],
       "/Java/Maven": [
         "/Java/Maven/Install.md"
