@@ -9,6 +9,7 @@ export default defineUserConfig({
     // 在这里进行配置
     repoLabel: "我的博客",
     repo: "https://cnblogs.com/wujuncheng",
+    sidebarDepth:2,
     navbar: [
       // NavbarItem
       {
@@ -51,6 +52,15 @@ export default defineUserConfig({
       {
         text:"基础设施",
         link:"/Infrastructure/NginxProxyLocalServer.md"
+      },
+      {
+        text:"前端篇",
+        children: [
+          {
+            text: "Vue",
+            link: "/Vue/VueSingleFileComponents.md"
+          }
+        ]
       },
       {
         text: "VS Code的插件与玩法",
@@ -123,6 +133,13 @@ export default defineUserConfig({
       "/Infrastructure":[
         "/Infrastructure/NginxProxyLocalServer.md"
       ],
+
+      "/Vue/":[
+        "/Vue/VueSingleFileComponents.md",
+        "/Vue/VueApiStyle.md",
+        "/Vue/VueTemplate.md",
+      ],
+
       "/Java/Maven": [
         "/Java/Maven/Install.md"
       ],
