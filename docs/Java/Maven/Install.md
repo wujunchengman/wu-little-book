@@ -7,6 +7,26 @@ title: Maven的安装与基本配置
 
 Maven是一个“绿色软件”，也就是不用安装，解压就能运行的软件，但是maven是依赖jre的，因此要提前安装上jre。不过用Maven都是用来开发Java的，因此直接装JDK就好了，现在安装JDK已经非常方便了，在Linux环境下直接用包管理工具安装OpenJDK就好，简单方便；Windows上也可以使用Microsoft JDK，这是微软维护的JDK，可以自动配置环境变量，设置JAVA_HOME什么的，非常方便
 
+### 下载Maven
+
+在Maven的官网中，提供了编译好的二进制版本，也提供了源代码，可以自己编译打包，只是下载的时候要注意，Apache的东西虽然国内可以访问，但是也非常的访问不畅，如果有条件的话，最好带上梯子，否则很容易下载失败
+
+### 配置path
+
+这里配置path就只配Maven相关的环境变量了，JAVA_HOME这种Microsoft JDK可以自动配好，如果用的其他JDK也可以手动配一下，不难
+
+首先设置MAVEN_HOME，值为Maven的安装目录（解压目录），最外层
+![MAVEN_HOME的配置](./MavenHome.png)
+配置好MAVEN_HOME之后，在Path中增加Maven的可执行文件路径
+![配置Maven的可执行文件](./MavenPath.png)
+
+配置好后可以通过以下命令判断是否配置成功
+```shell
+mvn -version
+```
+如果配置成功，则会输出Maven的版本信息以及安装位置
+
+注意：新配置的环境变量，需要重启终端才会生效，如果提示找不到可运行程序的名称，可以重新打开一下终端(Windows上是cmd/powershell等)再试试
 
 
 ## 配置本地仓库路径
@@ -82,3 +102,36 @@ mirror应该配置在settings节点下的mirrors节点(默认配置文件中已�
 
 目前的maven默认的JDK版本是7，但是实际上使用的JDK版本并不是7，此时使用maven构建项目就会出错，因此需要更改一下maven所使用的默认JDK版本
 
+在settings节点下的profiles节点，定义了项目的编译环境，在profiles节点下添加一个profile节点
+```xml
+<settings xmlns="http://maven.apache.org/SETTINGS/1.2.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.2.0 https://maven.apache.org/xsd/settings-1.2.0.xsd">
+    
+    <!-- 其他的一些配置省略了…… -->
+
+    <profiles>
+        <profile>
+            <!-- profile唯一id，用于在不同环境下进行区分 -->
+            <id>jdk-17</id>
+            <activation>
+                <!-- 是否默认激活当前配置 -->
+                <activeByDefault>true</activeByDefault>
+                <!-- JDK版本 -->
+                <jdk>17</jdk>
+            </activation>
+            <properties>
+                <!-- 打包源码版本，可以低于JDK版本（没有用到新版本特性），但不能高于 -->
+                <maven.compiler.source>17</maven.compiler.source>
+                <!-- 编译时版本，可以低于JDK版本（没有用到新版本特性），但不能高于 -->
+                <maven.compiler.target>17</maven.compiler.target>
+                <!-- 编译器版本 -->
+                <maven.compiler.compilerVersion>17</maven.compiler.compilerVersion>
+            </properties>
+        </profile>
+    </profiles>
+
+    <!-- 其他的一些配置省略了…… -->
+
+</settings>
+```
