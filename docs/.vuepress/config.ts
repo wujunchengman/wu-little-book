@@ -1,4 +1,5 @@
 import { defaultTheme, defineUserConfig } from "vuepress";
+import { SidebarConfig } from "vuepress";
 
 export default defineUserConfig({
   port: 4624,
@@ -28,7 +29,16 @@ export default defineUserConfig({
         text: "WPF",
         link: "/WPF/",
       },
-      // NavbarGroup
+      {
+        text:"后端生态",
+        // link:"/Backend/"
+        children:[
+          {
+            text:"Docker",
+            link:"/Backend/Docker/QuickStart.md"
+          }
+        ]
+      },
       {
         text: "生态项目",
         children: [
@@ -82,7 +92,8 @@ export default defineUserConfig({
       // 字符串 - 页面文件路径
       // '/bar/README.md',
     ],
-    sidebar: {
+    sidebar: 
+    {
       "/CSharp": [
         {
           text: "前言",
