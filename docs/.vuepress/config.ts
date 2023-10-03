@@ -61,7 +61,7 @@ export default defineUserConfig({
       },
       {
         text:"基础设施",
-        link:"/Infrastructure/NginxProxyLocalServer.md"
+        link:"/Infrastructure/"
       },
       {
         text:"前端篇",
@@ -141,10 +141,9 @@ export default defineUserConfig({
       "/Linux": [
         "/Linux/DualNetworkConfiguration.md"
       ],
-      "/Infrastructure":[
-        "/Infrastructure/NginxProxyLocalServer.md"
+      "/Infrastructure/Nginx":[
+        "/Infrastructure/Nginx/NginxProxyLocalServer.md"
       ],
-
       "/Vue/":[
         "/Vue/VueSingleFileComponents.md",
         "/Vue/VueApiStyle.md",
