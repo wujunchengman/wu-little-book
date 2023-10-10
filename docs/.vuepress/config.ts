@@ -9,9 +9,10 @@ export default defineUserConfig({
     // 在这里进行配置
     repoLabel: "我的博客",
     repo: "https://cnblogs.com/wujuncheng",
-    sidebarDepth:2,
+    sidebarDepth: 2,
     navbar: [
       // NavbarItem
+      { text: "Git", link: "/Tools/GitQuickStart.md" },
       {
         text: "C#",
         link: "/CSharp/",
@@ -34,56 +35,66 @@ export default defineUserConfig({
         children: [
           {
             text: "日志",
-            children:[
+            children: [
               // {
               //   text:"NLog的基本使用"
               // },
               {
-                text:"NLog的配置文件",
-                link:"/Ecosystem/NLog/NLogConfigurationFile.md"
-              }
-            ]
-          }],
+                text: "NLog的配置文件",
+                link: "/Ecosystem/NLog/NLogConfigurationFile.md",
+              },
+            ],
+          },
+        ],
       },
       {
-        text:"Linux",
-        link:"/Linux"
+        text: "Linux",
+        link: "/Linux",
       },
       {
-        text:"基础设施",
-        link:"/Infrastructure/NginxProxyLocalServer.md"
+        text: "基础设施",
+        link: "/Infrastructure/NginxProxyLocalServer.md",
       },
       {
-        text:"前端篇",
+        text: "前端篇",
         children: [
           {
             text: "Vue",
-            link: "/Vue/VueSingleFileComponents.md"
-          }
-        ]
+            children:[
+              {
+                text:"Vue基础",
+                link: "/Vue/VueSingleFileComponents.md",
+              }
+            ]
+          },
+        ],
       },
       {
         text: "VS Code的插件与玩法",
         link: "vscode",
       },
       {
-        text:"Java篇",
+        text: "Java篇",
         children: [
           {
             text: "Maven",
-            link: "/Java/Maven/Install.md"
+            link: "/Java/Maven/Install.md",
           },
           {
             text: "Spring Boot",
-            link: "/Java/SpringBoot/"
-          }
-        ]
-      }
+            link: "/Java/SpringBoot/",
+          },
+        ],
+      },
       // 字符串 - 页面文件路径
       // '/bar/README.md',
     ],
     sidebar: {
       "/CSharp": [
+        {
+          text:'编程在干什么',
+          link: "/CSharp/description",
+        },
         {
           text: "前言",
           link: "/CSharp/introduction",
@@ -106,19 +117,17 @@ export default defineUserConfig({
       ],
       "/AspNetCore/": [
         {
-          text:"基础部分",
-          children:[
-            "/AspNetCore/Basic/Startup.md"
-          ]
+          text: "基础部分",
+          children: ["/AspNetCore/Basic/Startup.md"],
         },
         {
           text: "鉴权授权",
           children: [
-            
             "/AspNetCore/Authorization/AuthenticationAndAuthorization.md",
             "/AspNetCore/Authorization/HelloAuthentication.md",
             "/AspNetCore/Authorization/Sample.md",
-             "/reference/config.md"],
+            "/reference/config.md",
+          ],
         },
       ],
       "/WPF/": [
@@ -127,29 +136,21 @@ export default defineUserConfig({
           children: ["20220608_DynamicListView"],
         },
       ],
-      "/Linux": [
-        "/Linux/DualNetworkConfiguration.md"
-      ],
-      "/Infrastructure":[
-        "/Infrastructure/NginxProxyLocalServer.md"
-      ],
+      "/Linux": ["/Linux/DualNetworkConfiguration.md"],
+      "/Infrastructure": ["/Infrastructure/NginxProxyLocalServer.md"],
 
-      "/Vue/":[
+      "/Vue/": [
         "/Vue/VueSingleFileComponents.md",
         "/Vue/VueApiStyle.md",
         "/Vue/VueTemplate.md",
       ],
 
-      "/Java/Maven": [
-        "/Java/Maven/Install.md"
-      ],
-      "/Java/SpringBoot":[
+      "/Java/Maven": ["/Java/Maven/Install.md"],
+      "/Java/SpringBoot": [
         "/Java/SpringBoot/Index.md",
         "/Java/SpringBoot/HelloWorld.md",
-        "/Java/SpringBoot/Simplified.md"
-
-      ]
+        "/Java/SpringBoot/Simplified.md",
+      ],
     },
   }),
 });
-
