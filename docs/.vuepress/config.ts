@@ -1,4 +1,5 @@
 import { defaultTheme, defineUserConfig } from "vuepress";
+import { SidebarConfig } from "vuepress";
 
 export default defineUserConfig({
   port: 4624,
@@ -29,7 +30,16 @@ export default defineUserConfig({
         text: "WPF",
         link: "/WPF/",
       },
-      // NavbarGroup
+      {
+        text:"后端生态",
+        // link:"/Backend/"
+        children:[
+          {
+            text:"Docker",
+            link:"/Backend/Docker/QuickStart.md"
+          }
+        ]
+      },
       {
         text: "生态项目",
         children: [
@@ -52,8 +62,8 @@ export default defineUserConfig({
         link: "/Linux",
       },
       {
-        text: "基础设施",
-        link: "/Infrastructure/NginxProxyLocalServer.md",
+        text:"基础设施",
+        link:"/Infrastructure/"
       },
       {
         text: "前端篇",
@@ -89,7 +99,8 @@ export default defineUserConfig({
       // 字符串 - 页面文件路径
       // '/bar/README.md',
     ],
-    sidebar: {
+    sidebar: 
+    {
       "/CSharp": [
         {
           text:'编程在干什么',
@@ -136,10 +147,13 @@ export default defineUserConfig({
           children: ["20220608_DynamicListView"],
         },
       ],
-      "/Linux": ["/Linux/DualNetworkConfiguration.md"],
-      "/Infrastructure": ["/Infrastructure/NginxProxyLocalServer.md"],
-
-      "/Vue/": [
+      "/Linux": [
+        "/Linux/DualNetworkConfiguration.md"
+      ],
+      "/Infrastructure/Nginx":[
+        "/Infrastructure/Nginx/NginxProxyLocalServer.md"
+      ],
+      "/Vue/":[
         "/Vue/VueSingleFileComponents.md",
         "/Vue/VueApiStyle.md",
         "/Vue/VueTemplate.md",
