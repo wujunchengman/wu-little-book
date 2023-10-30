@@ -84,6 +84,12 @@ export default defineUserConfig({
         link: "vscode",
       },
       {
+        text:"Rust",
+        children:[
+          "/Rust/variables.md"
+        ]
+      },
+      {
         text: "Java篇",
         children: [
           {
@@ -158,7 +164,9 @@ export default defineUserConfig({
         "/Vue/VueApiStyle.md",
         "/Vue/VueTemplate.md",
       ],
-
+      "/Rust":[
+        "/Rust/variables.md"
+      ],
       "/Java/Maven": ["/Java/Maven/Install.md"],
       "/Java/SpringBoot": [
         "/Java/SpringBoot/Index.md",
