@@ -31,14 +31,14 @@ export default defineUserConfig({
         link: "/WPF/",
       },
       {
-        text:"后端生态",
+        text: "后端生态",
         // link:"/Backend/"
-        children:[
+        children: [
           {
-            text:"Docker",
-            link:"/Backend/Docker/QuickStart.md"
-          }
-        ]
+            text: "Docker",
+            link: "/Backend/Docker/QuickStart.md",
+          },
+        ],
       },
       {
         text: "生态项目",
@@ -62,20 +62,20 @@ export default defineUserConfig({
         link: "/Linux",
       },
       {
-        text:"基础设施",
-        link:"/Infrastructure/"
+        text: "基础设施",
+        link: "/Infrastructure/",
       },
       {
         text: "前端篇",
         children: [
           {
             text: "Vue",
-            children:[
+            children: [
               {
-                text:"Vue基础",
+                text: "Vue基础",
                 link: "/Vue/VueSingleFileComponents.md",
-              }
-            ]
+              },
+            ],
           },
         ],
       },
@@ -84,10 +84,8 @@ export default defineUserConfig({
         link: "vscode",
       },
       {
-        text:"Rust",
-        children:[
-          "/Rust/variables.md"
-        ]
+        text: "Rust",
+        link: "/Rust/variables.md",
       },
       {
         text: "Java篇",
@@ -105,11 +103,10 @@ export default defineUserConfig({
       // 字符串 - 页面文件路径
       // '/bar/README.md',
     ],
-    sidebar: 
-    {
+    sidebar: {
       "/CSharp": [
         {
-          text:'编程在干什么',
+          text: "编程在干什么",
           link: "/CSharp/description",
         },
         {
@@ -146,6 +143,10 @@ export default defineUserConfig({
             "/reference/config.md",
           ],
         },
+        {
+          text: "好库推荐",
+          children: ["/AspNetCore/TripartiteLibrary/Polly.md"],
+        },
       ],
       "/WPF/": [
         {
@@ -153,19 +154,19 @@ export default defineUserConfig({
           children: ["20220608_DynamicListView"],
         },
       ],
-      "/Linux": [
-        "/Linux/DualNetworkConfiguration.md"
+      "/Linux": ["/Linux/DualNetworkConfiguration.md"],
+      "/Infrastructure/Nginx": [
+        "/Infrastructure/Nginx/NginxProxyLocalServer.md",
       ],
-      "/Infrastructure/Nginx":[
-        "/Infrastructure/Nginx/NginxProxyLocalServer.md"
-      ],
-      "/Vue/":[
+      "/Vue/": [
         "/Vue/VueSingleFileComponents.md",
         "/Vue/VueApiStyle.md",
         "/Vue/VueTemplate.md",
       ],
-      "/Rust":[
-        "/Rust/variables.md"
+      "/Rust": [
+        "/Rust/variables.md",
+        "/Rust/DataTypes.md",
+        "/Rust/ControlFlow.md",
       ],
       "/Java/Maven": ["/Java/Maven/Install.md"],
       "/Java/SpringBoot": [
