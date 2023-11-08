@@ -128,6 +128,12 @@ export default defineUserConfig({
             "/introduction",
           ],
         },
+        {
+          text:"经验分享",
+          children:[
+            "/CSharp/ExperienceSharing/StringDisplayWidth"
+          ]
+        }
       ],
       "/AspNetCore/": [
         {
