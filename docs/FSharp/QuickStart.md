@@ -169,3 +169,37 @@ else
 F#有三种循环：for...in、for...to、while...do
 
 #### for...in
+
+```fsharp
+let list = [1; 2; 3; 4; 5]
+for i in list do
+   printf "%d " i
+```
+for...in会遍历整个可枚举集合，与C#中的foreach类似
+
+#### for...to
+
+for...to提供初值，达到边界后停止循环
+
+for...to有两个版本
+
+```fsharp
+// 使用to每次自增标志变量
+for i = 1 to 10 do
+  printfn "%i " i  // prints 1 2 3 4 5 6 7 8 9 10
+// 使用downto每次自减标志变量
+for i = 10 downto 1 do
+  printfn "%i" i  // prints 10 9 8 7 6 5 4 3 2 1
+```
+从上面的例子来看，for...to对应C#中的`for(var i = 1; i <= 10; i++)`和`for(var i = 10;i >= 1; i++)`
+
+#### while...do
+
+```fsharp
+let mutable num = 1;
+while num<=10 do
+    printfn $"当前num:{num}"
+    num <- num+1;
+```
+
+F#的while...do和绝大多数语言的while一样，满足条件则执行，直到不满足条件
