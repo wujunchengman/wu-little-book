@@ -14,9 +14,19 @@ export default defineUserConfig({
     navbar: [
       // NavbarItem
       { text: "Git", link: "/Tools/GitQuickStart.md" },
+      // {
+      //   text: ".NET",
+      //   children: [
+          
+      //   ]
+      // },
       {
         text: "C#",
         link: "/CSharp/",
+      },
+      {
+        text: "F#",
+        link: "/FSharp/QuickStart",
       },
       {
         text: "AspNetCore",
@@ -129,8 +139,8 @@ export default defineUserConfig({
           ],
         },
         {
-          text:"经验分享",
-          children:[
+          text: "经验分享",
+          children: [
             "/CSharp/ExperienceSharing/StringDisplayWidth"
           ]
         }
