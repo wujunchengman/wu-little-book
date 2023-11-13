@@ -203,3 +203,89 @@ while num<=10 do
 ```
 
 F#的while...do和绝大多数语言的while一样，满足条件则执行，直到不满足条件
+
+### 函数
+
+函数是众多编程语言中的一个基本构建基块，在其他编程语言中也有叫方法的
+```fsharp
+let <function name> <parameters> = <function body>
+```
+从参数的语法可以看出，F#的语法让习惯了C#、Java之类编程语言的人很不适应，函数名与参数之间并没有括号，而是简单的用空格隔开，这种语法还是需要适应
+
+F#中的函数可以不指定函数的返回值类型，也不存在return关键字，F#中函数最后一行的信息就是返回的内容
+
+```fsharp
+// 声明add函数
+let add a b = a + b
+// 调用add函数
+let sum = add 2 2 
+// 会报错，因为上一行代码已经让add函数自动类型推断为a、b参数均为整数
+// 这一行提供的两个字符串参数不正确
+let concat = add "hello" "world" 
+```
+
+类型推断很智能，但是并不总是能正确推断，因此也可以明确指定类型
+```fsharp
+// 求和后转换为字符串，参数a、b为int类型，返回值为string类型
+let add (a:int) (b:int) : string = string (a + b) 
+```
+
+### 函数模式
+
+#### 组合
+
+组合：组合就是将多个函数合并到一个函数中
+
+```fsharp
+// 加2
+let add2 a = a + 2
+// 乘3 
+let multiply3 a = a * 3 
+// 组合两个函数
+let addAndMultiply a =
+    let sum = add2 a
+    let product = multiply3 sum
+    product
+
+printfn "%i" (addAndMultiply 2) // 12
+```
+
+F#提供了更简单的方式组合方式
+```fsharp
+let add2 a = a + 2
+let multiply3 a = a * 3 
+// 同上，先调用
+let addAndMultiply = add2 >> multiply3
+
+printfn "%i" (addAndMultiply 2) // 12
+```
+
+#### 管道
+
+管道：管道以一个值开始，然后依次调用多个函数，并使用一个函数的输出作为下一个函数的输入
+
+```fsharp
+let list = [4; 3; 1]
+let sort (list: int list) = List.sort list
+let print (list: int list)= List.iter(fun x-> printfn "item %i" x) list
+
+list |> sort |> print // item 1 item 3 item 4
+```
+#### 管道还是组合？
+
+管道与组合在功能上是相似的，假设要依次调用N个函数，使用管道的做法是
+```fsharp
+parameter |> fun1 |> fun2 |> fun3 …… |> funN
+```
+如果这个调用只用一次还好，如果要多次使用呢？这时候可以考虑使用组合
+```fsharp
+let compositionN = fun1 >> fun2 >> fun3 …… >> funN
+// 第一次调用多个函数
+compositionN parameter
+
+……
+
+// 第二次调用多个函数
+compositionN parameter
+
+```
