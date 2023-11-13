@@ -1,5 +1,6 @@
 --- 
 title: Git快速启动 
+sidebar: auto
 --- 
 
 ## Git用来干什么？
