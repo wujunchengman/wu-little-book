@@ -289,3 +289,66 @@ compositionN parameter
 compositionN parameter
 
 ```
+
+### 集合
+
+F#提供了三种类型的集合：列表、数组、序列
+
+#### 列表
+
+列表是有序且不可变的元素集
+
+```fsharp
+// 将元素括在中括号 ([]) 中以定义列表。 列表项由分号 (;) 分隔
+let cards = ["Ace"; "King"; "Queen"]
+
+//将每个元素放在新行上，无需使用分号
+let cards = [
+  "Ace"
+  "King"
+  "Queen"
+]
+
+```
+在列表中，元素的类型必须相同
+
+创建列表时可以使用范围运算符
+
+```fsharp
+// 创建 1 2 3 4 5的列表
+let numbers = [ 1 .. 5 ]
+```
+
+列表是不可变的，对列表的操作会返回一个新列表
+```fsharp
+let cards = ["Ace"; "King"; "Queen"]
+//  通过使用双冒号 (::) 运算符，可以将项追加到列表开头
+let newList = "Jack" :: cards // "Jack", "Ace", "King", "Queen" 
+
+let cards = ["Ace"; "King"; "Queen"]
+let otherCardList = ["Jack"; "10"]
+// 使用 @ 运算符添加整个列表
+let fullList = cards @ otherCardList // "Ace", "King", "Queen", "Jack", "10"
+
+let cards = ["Ace"; "King"; "Queen"]
+let otherCardList = ["10"; "9"]
+// 使用append函数追加到列表开头，append函数适用于数组和序列集合
+let fullList = cards |> List.append ["Jack"] // "Jack", "Ace", "King", "Queen"
+let fullList = cards |> List.append otherCardList // "10", "9", "Ace", "King", "Queen"
+```
+
+F# 中的列表是作为链接列表实现的，内置了一些属性
+
+| 属性 | 描述 |
+| -- | -- |
+| Head | 列表中的第一个元素 |
+| Empty | 返回一个空列表，可以在想要创建空列表时使用 |
+| IsEmpty | 检查当前列表是否为空 |
+| Item | 检索指定位置（从零开始的索引）的当前元素 |
+| Length | 返回列表中的项数 |
+| Tail | 返回列表中除第一个元素之外的所有元素 |
+
+```fsharp
+let list = [1; 2; 3; 4]
+list.Item 1 // 2
+```
