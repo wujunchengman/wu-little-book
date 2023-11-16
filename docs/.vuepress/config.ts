@@ -141,7 +141,8 @@ export default defineUserConfig({
         {
           text: "经验分享",
           children: [
-            "/CSharp/ExperienceSharing/StringDisplayWidth"
+            "/CSharp/ExperienceSharing/StringDisplayWidth",
+            "/CSharp/ExperienceSharing/UseRecursionSparingly",
           ]
         }
       ],
