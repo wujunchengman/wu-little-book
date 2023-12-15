@@ -171,6 +171,16 @@ export default defineUserConfig({
           children: ["20220608_DynamicListView"],
         },
       ],
+      "/Ecosystem/":[
+        {
+          text: "Nlog",
+          children:[
+            "/Ecosystem/NLog/Install.md",
+            "/Ecosystem/NLog/NLogConfigurationFile.md",
+            "/Ecosystem/NLog/WriteInDatabase.md"
+          ]
+        }
+      ],
       "/Linux": ["/Linux/DualNetworkConfiguration.md"],
       "/Infrastructure/Nginx": [
         "/Infrastructure/Nginx/NginxProxyLocalServer.md",
