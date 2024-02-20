@@ -48,6 +48,10 @@ export default defineUserConfig({
             text: "Docker",
             link: "/Backend/Docker/QuickStart.md",
           },
+          {
+            text: "Kubernetes",
+            link: "/Backend/Kubernetes/QuickStart.md",
+          },
         ],
       },
       {
