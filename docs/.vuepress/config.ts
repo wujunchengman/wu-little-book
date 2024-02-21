@@ -17,7 +17,7 @@ export default defineUserConfig({
       // {
       //   text: ".NET",
       //   children: [
-          
+
       //   ]
       // },
       {
@@ -44,6 +44,10 @@ export default defineUserConfig({
         text: "后端生态",
         // link:"/Backend/"
         children: [
+          {
+            text: "Redis",
+            link: "/Backend/Redis/Install.md",
+          },
           {
             text: "Docker",
             link: "/Backend/Docker/QuickStart.md",
@@ -147,8 +151,8 @@ export default defineUserConfig({
           children: [
             "/CSharp/ExperienceSharing/StringDisplayWidth",
             "/CSharp/ExperienceSharing/UseRecursionSparingly",
-          ]
-        }
+          ],
+        },
       ],
       "/AspNetCore/": [
         {
@@ -175,15 +179,15 @@ export default defineUserConfig({
           children: ["20220608_DynamicListView"],
         },
       ],
-      "/Ecosystem/":[
+      "/Ecosystem/": [
         {
           text: "Nlog",
-          children:[
+          children: [
             "/Ecosystem/NLog/Install.md",
             "/Ecosystem/NLog/NLogConfigurationFile.md",
-            "/Ecosystem/NLog/WriteInDatabase.md"
-          ]
-        }
+            "/Ecosystem/NLog/WriteInDatabase.md",
+          ],
+        },
       ],
       "/Linux": ["/Linux/DualNetworkConfiguration.md"],
       "/Infrastructure/Nginx": [
