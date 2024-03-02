@@ -1,7 +1,9 @@
-import { defaultTheme, defineUserConfig } from "vuepress";
-import { SidebarConfig } from "vuepress";
+import { defineUserConfig } from "vuepress";
+import { defaultTheme } from '@vuepress/theme-default'
+import { viteBundler } from '@vuepress/bundler-vite'
 
 export default defineUserConfig({
+  bundler: viteBundler(),
   port: 4624,
   lang: "zh-CN",
   title: "吴俊城",
