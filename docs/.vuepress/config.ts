@@ -50,7 +50,7 @@ export default defineUserConfig({
           },
           {
             text: "Docker",
-            link: "/Backend/Docker/QuickStart.md",
+            link: "/Backend/Docker/Install.md",
           },
           {
             text: "Kubernetes",
@@ -188,6 +188,10 @@ export default defineUserConfig({
             "/Ecosystem/NLog/WriteInDatabase.md",
           ],
         },
+      ],
+      "/Backend/Docker/": [
+        "/Backend/Docker/Install.md",
+        "/Backend/Docker/QuickStart.md"
       ],
       "/Linux": ["/Linux/DualNetworkConfiguration.md"],
       "/Infrastructure/Nginx": [
