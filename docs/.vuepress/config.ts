@@ -79,7 +79,7 @@ export default defineUserConfig({
       },
       {
         text: "Linux",
-        link: "/Linux",
+        link: "/Linux/",
       },
       {
         text: "基础设施",
@@ -195,7 +195,10 @@ export default defineUserConfig({
         "/Backend/Docker/Install.md",
         "/Backend/Docker/QuickStart.md"
       ],
-      "/Linux": ["/Linux/DualNetworkConfiguration.md"],
+      "/Linux": [
+        "/Linux/Debian12Init.md",
+        "/Linux/DualNetworkConfiguration.md"
+      ],
       "/Infrastructure/Nginx": [
         "/Infrastructure/Nginx/NginxProxyLocalServer.md",
       ],
