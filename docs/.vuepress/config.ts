@@ -108,6 +108,10 @@ export default defineUserConfig({
         link: "/Rust/variables.md",
       },
       {
+        text: "Python",
+        link: "/Python/Scope.md",
+      },
+      {
         text: "Java篇",
         children: [
           {
