@@ -10,3 +10,5 @@ titile: 开发中的一些基础设施软件用法
 ## Git篇
 [利用Git更好的阅读开源项目代码](./Git/ReadOpenSoourceProject.md)
 
+[Git分支操作](./Git/SquashMerge.md)
+
