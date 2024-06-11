@@ -124,6 +124,10 @@ export default defineUserConfig({
           },
         ],
       },
+      {
+        text: "实际项目",
+        link:"/Projects/index.md"
+      }
       // 字符串 - 页面文件路径
       // '/bar/README.md',
     ],
