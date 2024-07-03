@@ -1,7 +1,9 @@
-import { defaultTheme, defineUserConfig } from "vuepress";
-import { SidebarConfig } from "vuepress";
+import { defaultTheme } from '@vuepress/theme-default'
+import { defineUserConfig } from 'vuepress/cli'
+import { viteBundler } from '@vuepress/bundler-vite'
 
 export default defineUserConfig({
+  bundler: viteBundler(),
   port: 4624,
   lang: "zh-CN",
   title: "吴俊城",
@@ -17,7 +19,7 @@ export default defineUserConfig({
       // {
       //   text: ".NET",
       //   children: [
-          
+
       //   ]
       // },
       {
@@ -45,8 +47,12 @@ export default defineUserConfig({
         // link:"/Backend/"
         children: [
           {
+            text: "Redis",
+            link: "/Backend/Redis/Install.md",
+          },
+          {
             text: "Docker",
-            link: "/Backend/Docker/QuickStart.md",
+            link: "/Backend/Docker/Install.md",
           },
           {
             text: "Kubernetes",
@@ -73,7 +79,7 @@ export default defineUserConfig({
       },
       {
         text: "Linux",
-        link: "/Linux",
+        link: "/Linux/",
       },
       {
         text: "基础设施",
@@ -100,6 +106,10 @@ export default defineUserConfig({
       {
         text: "Rust",
         link: "/Rust/variables.md",
+      },
+      {
+        text: "Python",
+        link: "/Python/Scope.md",
       },
       {
         text: "Java篇",
@@ -147,8 +157,8 @@ export default defineUserConfig({
           children: [
             "/CSharp/ExperienceSharing/StringDisplayWidth",
             "/CSharp/ExperienceSharing/UseRecursionSparingly",
-          ]
-        }
+          ],
+        },
       ],
       "/AspNetCore/": [
         {
@@ -168,6 +178,12 @@ export default defineUserConfig({
           text: "好库推荐",
           children: ["/AspNetCore/TripartiteLibrary/Polly.md"],
         },
+        {
+          text: "经验分享",
+          children: [
+            "/AspNetCore/ExperienceSharing/WeChatPay.md",
+          ],
+        },
       ],
       "/WPF/": [
         {
@@ -175,17 +191,28 @@ export default defineUserConfig({
           children: ["20220608_DynamicListView"],
         },
       ],
-      "/Ecosystem/":[
+      "/Backend/Redis/":[
+        "/Backend/Redis/Install.md",
+        "/Backend/Redis/Basic.md",
+      ],
+      "/Ecosystem/": [
         {
           text: "Nlog",
-          children:[
+          children: [
             "/Ecosystem/NLog/Install.md",
             "/Ecosystem/NLog/NLogConfigurationFile.md",
-            "/Ecosystem/NLog/WriteInDatabase.md"
-          ]
-        }
+            "/Ecosystem/NLog/WriteInDatabase.md",
+          ],
+        },
       ],
-      "/Linux": ["/Linux/DualNetworkConfiguration.md"],
+      "/Backend/Docker/": [
+        "/Backend/Docker/Install.md",
+        "/Backend/Docker/QuickStart.md"
+      ],
+      "/Linux": [
+        "/Linux/Debian12Init.md",
+        "/Linux/DualNetworkConfiguration.md"
+      ],
       "/Infrastructure/Nginx": [
         "/Infrastructure/Nginx/NginxProxyLocalServer.md",
       ],
