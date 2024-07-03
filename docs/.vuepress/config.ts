@@ -1,5 +1,5 @@
-import { defineUserConfig } from "vuepress";
 import { defaultTheme } from '@vuepress/theme-default'
+import { defineUserConfig } from 'vuepress/cli'
 import { viteBundler } from '@vuepress/bundler-vite'
 
 export default defineUserConfig({
@@ -79,7 +79,7 @@ export default defineUserConfig({
       },
       {
         text: "Linux",
-        link: "/Linux",
+        link: "/Linux/",
       },
       {
         text: "基础设施",
@@ -106,6 +106,10 @@ export default defineUserConfig({
       {
         text: "Rust",
         link: "/Rust/variables.md",
+      },
+      {
+        text: "Python",
+        link: "/Python/Scope.md",
       },
       {
         text: "Java篇",
@@ -205,7 +209,10 @@ export default defineUserConfig({
         "/Backend/Docker/Install.md",
         "/Backend/Docker/QuickStart.md"
       ],
-      "/Linux": ["/Linux/DualNetworkConfiguration.md"],
+      "/Linux": [
+        "/Linux/Debian12Init.md",
+        "/Linux/DualNetworkConfiguration.md"
+      ],
       "/Infrastructure/Nginx": [
         "/Infrastructure/Nginx/NginxProxyLocalServer.md",
       ],
