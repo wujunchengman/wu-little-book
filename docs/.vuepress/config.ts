@@ -182,12 +182,22 @@ export default defineUserConfig({
           text: "好库推荐",
           children: ["/AspNetCore/TripartiteLibrary/Polly.md"],
         },
+        {
+          text: "经验分享",
+          children: [
+            "/AspNetCore/ExperienceSharing/WeChatPay.md",
+          ],
+        },
       ],
       "/WPF/": [
         {
           text: "项目中的一些玩法",
           children: ["20220608_DynamicListView"],
         },
+      ],
+      "/Backend/Redis/":[
+        "/Backend/Redis/Install.md",
+        "/Backend/Redis/Basic.md",
       ],
       "/Ecosystem/": [
         {
