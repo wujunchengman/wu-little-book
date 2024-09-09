@@ -201,7 +201,7 @@ export default defineUserConfig({
       ],
       "/Ecosystem/": [
         {
-          text: "Nlog",
+          text: "NLog",
           children: [
             "/Ecosystem/NLog/Install.md",
             "/Ecosystem/NLog/NLogConfigurationFile.md",
@@ -215,7 +215,8 @@ export default defineUserConfig({
       ],
       "/Linux": [
         "/Linux/Debian12Init.md",
-        "/Linux/DualNetworkConfiguration.md"
+        "/Linux/DualNetworkConfiguration.md",
+        "/Linux/Rsync.md"
       ],
       "/Infrastructure/Nginx": [
         "/Infrastructure/Nginx/NginxProxyLocalServer.md",
