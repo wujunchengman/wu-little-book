@@ -156,13 +156,6 @@ export default defineUserConfig({
             "/introduction",
           ],
         },
-        {
-          text: "经验分享",
-          children: [
-            "/CSharp/ExperienceSharing/StringDisplayWidth",
-            "/CSharp/ExperienceSharing/UseRecursionSparingly",
-          ],
-        },
       ],
       "/AspNetCore/": [
         {
@@ -199,6 +192,14 @@ export default defineUserConfig({
         "/Backend/Redis/Install.md",
         "/Backend/Redis/Basic.md",
       ],
+      "/Projects":[
+      {
+        text: "经验分享",
+        children: [
+          "/ExperienceSharing/StringDisplayWidth",
+          "/ExperienceSharing/UseRecursionSparingly",
+        ],
+      }],
       "/Ecosystem/": [
         {
           text: "NLog",
