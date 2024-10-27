@@ -232,6 +232,8 @@ export default defineUserConfig({
         "/Rust/variables.md",
         "/Rust/DataTypes.md",
         "/Rust/ControlFlow.md",
+        "/Rust/Ownership.md",
+        "/Rust/Struct.md",
       ],
       "/Java/Maven": ["/Java/Maven/Install.md"],
       "/Java/SpringBoot": [
