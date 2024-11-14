@@ -39,8 +39,13 @@ export default defineUserConfig({
         link: "/EntityFrameworkCore",
       },
       {
-        text: "WPF",
-        link: "/WPF/",
+        text:"客户端",
+        children:[
+          {
+            text: "WPF",
+            link: "/Client/WPF/",
+          },
+        ]
       },
       {
         text: "后端生态",
@@ -182,7 +187,7 @@ export default defineUserConfig({
           ],
         },
       ],
-      "/WPF/": [
+      "/Client/WPF/": [
         {
           text: "项目中的一些玩法",
           children: ["20220608_DynamicListView"],
