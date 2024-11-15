@@ -45,6 +45,10 @@ export default defineUserConfig({
             text: "WPF",
             link: "/Client/WPF/",
           },
+          {
+            text:"Tauri",
+            link:"/Client/Tauri/"
+          }
         ]
       },
       {
@@ -192,6 +196,10 @@ export default defineUserConfig({
           text: "项目中的一些玩法",
           children: ["20220608_DynamicListView"],
         },
+      ],
+      "/Client/Tauri/":[
+        "CallingFrontend",
+        "CallingRust"
       ],
       "/Backend/Redis/":[
         "/Backend/Redis/Install.md",
