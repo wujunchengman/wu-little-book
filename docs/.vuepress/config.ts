@@ -56,6 +56,10 @@ export default defineUserConfig({
         // link:"/Backend/"
         children: [
           {
+            text: "IoTDB",
+            link: "/Backend/IoTDB/IoTDbQuickStart.md",
+          },
+          {
             text: "Redis",
             link: "/Backend/Redis/Install.md",
           },
