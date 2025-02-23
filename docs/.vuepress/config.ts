@@ -1,6 +1,7 @@
 import { defaultTheme } from '@vuepress/theme-default'
 import { defineUserConfig } from 'vuepress/cli'
 import { viteBundler } from '@vuepress/bundler-vite'
+import {RustSidebar} from './config/rust'
 
 export default defineUserConfig({
   bundler: viteBundler(),
@@ -245,13 +246,7 @@ export default defineUserConfig({
         "/Vue/VueApiStyle.md",
         "/Vue/VueTemplate.md",
       ],
-      "/Rust": [
-        "/Rust/variables.md",
-        "/Rust/DataTypes.md",
-        "/Rust/ControlFlow.md",
-        "/Rust/Ownership.md",
-        "/Rust/Struct.md",
-      ],
+      "/Rust": RustSidebar,
       "/Java/Maven": ["/Java/Maven/Install.md"],
       "/Java/SpringBoot": [
         "/Java/SpringBoot/Index.md",

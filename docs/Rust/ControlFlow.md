@@ -12,12 +12,26 @@ Rust中常用的条件控制是if和match
 
 if与大多数编程语言一样，都是if……else if……else，如果条件为真，则执行对应的代码块
 
+```rust
+    let number = 6;
+
+    if number % 4 == 0 {
+        println!("number is divisible by 4");
+    } else if number % 3 == 0 {
+        println!("number is divisible by 3");
+    } else if number % 2 == 0 {
+        println!("number is divisible by 2");
+    } else {
+        println!("number is not divisible by 4, 3, or 2");
+    }
+```
+
 在Rust中有一个其他编程语言并不常见的语法支持，Rust中的赋值只要右边是表达式即可，因此，只要if中的代码块是表达式，就可以用来赋值
 
 例如在C#中
 ```cshrp
 // 允许的操作，使用三元表达式赋值
-var z = true?1:2;
+var z = true ? 1 : 2;
 
 // 不允许的操作
 // var z ={
@@ -41,13 +55,61 @@ TODO:
 
 ## 循环结构
 
-Rust中有三种循环，分别是loop、while、for，它和其他编程语言不大一样，其中loop是无限循环，与其他语言中的while(true)类似；while则基本相同，都是执行到不满足条件结束循环；for与其他语言不同，虽然叫for,但是更像C#中的foreach，它的结构是
+Rust中有三种循环，分别是loop、while、for，和其他编程语言有点一样
+
+#### loop
+
+loop是无限循环，与其他语言中的while(true)类似
+
 ```rust
-for element in a {
-        println!("the value is: {element}");
+    let mut counter = 0;
+
+    let result = loop {
+        counter += 1;
+
+        if counter == 10 {
+            break counter * 2;
+        }
+    };
+
+    println!("The result is {result}");
+```
+
+Rust的循环允许返回值，也就是说Rust的循环是表达式，返回值跟在`break`关键字后面
+
+
+
+
+#### while
+
+while则基本相同，都是执行到不满足条件结束循环
+
+```rust
+    let a = [10, 20, 30, 40, 50];
+    let mut index = 0;
+
+    while index < 5 {
+        println!("the value is: {}", a[index]);
+
+        index += 1;
     }
 ```
+
+
+#### for
+
+for与C#中的for不同，虽然叫for,但是更像C#中的foreach，和Python中的for类似，它的结构是
+```rust
+    for number in (1..4).rev() {
+        println!("{number}!");
+    }
+    println!("LIFTOFF!!!");
+```
 从结构和功能上都更贴近foreach
+
+这里用到了两个标准库的功能，`(1..4)`是标准库的Range，用来生成从一个数字开始到另一个数字之前结束的所有数字的序列；rev()方法则用来反转Range。这里的遍历实际上是3，2，1（左开右闭）
+
+#### 循环标签
 
 Rust的循环还有一个比较特别的点，就是支持循环标签，一般的语言中，break和continue都是作用于最内层的循环，但Rust支持使用循环标签，指定break和continue作用与哪个循环上
 ```rust{3,10,13}
