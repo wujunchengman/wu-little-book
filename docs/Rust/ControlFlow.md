@@ -10,6 +10,8 @@ title: 控制流
 
 Rust中常用的条件控制是if和match
 
+#### if
+
 if与大多数编程语言一样，都是if……else if……else，如果条件为真，则执行对应的代码块
 
 ```rust
@@ -29,7 +31,7 @@ if与大多数编程语言一样，都是if……else if……else，如果条�
 在Rust中有一个其他编程语言并不常见的语法支持，Rust中的赋值只要右边是表达式即可，因此，只要if中的代码块是表达式，就可以用来赋值
 
 例如在C#中
-```cshrp
+```csharp
 // 允许的操作，使用三元表达式赋值
 var z = true ? 1 : 2;
 
@@ -50,6 +52,89 @@ let number = if true { 5 } else { 6 };
 ```
 
 当if……else过多时，代码的可读性将大大降低，此时可以使用更为强大的match
+
+#### match
+
+```rust
+    let o = Some(5);
+    let s = match o {
+        Some(v) => format!("Option的值是{}",v),
+        None => String::from("Option的值是None"),
+    };
+    println!("{}",s)
+```
+
+match匹配必须是穷尽的，也就是说match分支必须覆盖每一种可能，比如处理Option时，就必须同时指定Some的处理和None的处理，只处理一种是不行的
+
+match匹配必须穷尽，是不是意味着如果使用match时可能情况非常多，就必须把所有的情况都一一写出来呢？答案时不是的，math也支持通配模式和`_`占位符
+```rust
+    let dice_roll = 9;
+    match dice_roll {
+        3 => add_fancy_hat(),
+        7 => remove_fancy_hat(),
+        other => move_player(other),
+    }
+    fn add_fancy_hat() {}
+    fn remove_fancy_hat() {}
+    fn move_player(num_spaces: u8) {}
+```
+这里match匹配了一个i32值，不代表必须把每个i32可能的值都写出来，这里使用了通配模式，other并不是一个i32值，Rust便认定other是一个通配模式，会将所有的值都匹配到这个分支（因此通配模式必须在最后用，否则将永远不会匹配到后面的分支了）
+
+```rust
+    let dice_roll = 9;
+    match dice_roll {
+        3 => add_fancy_hat(),
+        7 => remove_fancy_hat(),
+        _ => reroll(),
+    }
+
+    fn add_fancy_hat() {}
+    fn remove_fancy_hat() {}
+    fn reroll() {}
+```
+通配模式还支持`_`占位符，`_`占位符是通配模式的一种特殊情况，表示匹配这个分支，但是丢弃匹配的值（`_`在很多编程语言中都表示丢弃的值）
+
+#### if let
+
+if let是match的一种特殊形式，也就是只匹配一种模式，并丢弃其他模式的简便写法
+
+```rust
+    let config_max = Some(3u8);
+    // if let 写法
+    if let Some(max) = config_max {
+        println!("The maximum is configured to be {max}");
+    }
+
+    // match写法
+    match config_max {
+        Some(max) => println!("The maximum is configured to be {max}"),
+        _ => (),
+    }
+```
+
+如果仅仅只处理一种模式，那么只需要`if let`直接跟对应的模式即可，这减少了很多样板代码，也让代码看起来更清晰了
+
+if let也可以跟一个else，其对应的语句块则是match中丢弃模式中的语句块
+```rust
+    let mut count = 0;
+    
+    // match语法
+    match coin {
+        Coin::Quarter(state) => println!("State quarter from {state:?}!"),
+        _ => count += 1,
+    }
+
+    // if let语法
+    if let Coin::Quarter(state) = coin {
+        println!("State quarter from {state:?}!");
+    } else {
+        count += 1;
+    }
+```
+这里也展示了if let去匹配是对象位置的差异
+
+上面的match后跟要匹配的变量，里面是对应的模式，而在if let 语法中，前面是要匹配的模式然后跟`=`，后面是要匹配的变量，这里感觉上有点颠倒了顺序，稍有不适，但是也还好
+
 
 TODO:
 
