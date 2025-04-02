@@ -17,27 +17,26 @@ export default defineUserConfig({
     navbar: [
       // NavbarItem
       { text: "Git", link: "/Tools/GitQuickStart.md" },
-      // {
-      //   text: ".NET",
-      //   children: [
-
-      //   ]
-      // },
       {
-        text: "C#",
-        link: "/CSharp/",
-      },
-      {
-        text: "F#",
-        link: "/FSharp/QuickStart",
-      },
-      {
-        text: "AspNetCore",
-        link: "/AspNetCore/",
-      },
-      {
-        text: "EntityFrameworkCore",
-        link: "/EntityFrameworkCore",
+        text: ".NET",
+        children: [
+          {
+            text: "C#",
+            link: "/CSharp/",
+          },
+          {
+            text: "F#",
+            link: "/FSharp/QuickStart",
+          },
+          {
+            text: "AspNetCore",
+            link: "/AspNetCore/",
+          },
+          {
+            text: "EF Core",
+            link: "/EntityFrameworkCore",
+          },
+        ]
       },
       {
         text:"客户端",
@@ -170,6 +169,10 @@ export default defineUserConfig({
             "/introduction",
           ],
         },
+        {
+          text: "dotNET平台下的AOT跨平台编译",
+          link: "/CSharp/CrossCompile"
+        }
       ],
       "/AspNetCore/": [
         {
