@@ -69,3 +69,76 @@ let a = [1,2,3,4,5]
 
 // 如果使用相同的元素初始化数组，可以在声明类型的地方替换为具体的值，后面元素数量的定义不变，会初始化为一个包含了指定数量，所有元素都初始化为提供的具体的值的数组
 let a = [3;5];
+```
+
+访问数组中的元素使用对应的索引值
+
+```rust
+let a = [1, 2, 3, 4, 5];
+
+let first = a[0];
+let second = a[1];
+```
+
+程序在索引操作中使用一个无效的值时导致**运行时**错误
+
+如果需要访问一个不确定是否会越界的数组，可以使用get访问，它会返回一个Option，不会出现**运行时**错误
+
+### 列表（vector）
+
+vector 允许我们一个挨着一个地储存一系列数量可变的值。vector与其他编程语言的List类似
+
+新建一个vector
+```rust
+// 新建一个空vector
+let v: Vec<i32> = Vec::new();
+
+// 通过vec!宏创建含有指定元素的vector，泛型类型自动推断为i32
+let v = vec![1, 2, 3];
+
+// 新建空vector并向其中增加元素
+let mut v = Vec::new();
+v.push(5);
+v.push(6);
+v.push(7);
+v.push(8);
+
+```
+
+访问vector则与访问数组类似，可以通过索引和get访问
+
+```rust
+let v = vec![1, 2, 3, 4, 5];
+
+// 通过索引访问，如果不是合法的索引值，会导致运行时错误
+let third: &i32 = &v[2];
+println!("The third element is {third}");
+
+// 通过get访问，返回一个Option，不会导致运行时错误
+let third: Option<&i32> = v.get(2);
+match third {
+    Some(third) => println!("The third element is {third}"),
+    None => println!("There is no third element."),
+}
+```
+
+vector不能在拥有其中项的引用的同时增加元素
+```rust
+let mut v = vec![1, 2, 3, 4, 5];
+let first = &v[0];
+// 编译器会报错，这是因为vector同其他编程语言一样，vector也是先申请一段空间以数组的方式保存，如果新增元素时容量不够，就申请一个更大的数组空间，将目前的元素复制过去
+// 如果在持有项的引用时添加元素导致了扩容复制，则原来的引用地址就不再有效
+v.push(6);
+```
+
+vector是泛型的，只能保存同一种类型，其他编程语言有非泛型List，但是Rust不提供，当有需要保存不同类型的元素在vector中的需求时，可以借助枚举类型，Rust的枚举类型非常特别，可以包含一个任意类型的值
+
+### 字符串（string）
+
+
+
+### 哈希map（hash map）
+
+hashmap允许我们将值与一个特定的键（key）相关联。这是一个叫做 map 的更通用的数据结构的特定实现。
+
+
