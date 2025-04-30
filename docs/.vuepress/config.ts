@@ -1,6 +1,7 @@
 import { defaultTheme } from '@vuepress/theme-default'
 import { defineUserConfig } from 'vuepress/cli'
 import { viteBundler } from '@vuepress/bundler-vite'
+import {RustSidebar} from './config/rust'
 
 export default defineUserConfig({
   bundler: viteBundler(),
@@ -16,27 +17,26 @@ export default defineUserConfig({
     navbar: [
       // NavbarItem
       { text: "Git", link: "/Tools/GitQuickStart.md" },
-      // {
-      //   text: ".NET",
-      //   children: [
-
-      //   ]
-      // },
       {
-        text: "C#",
-        link: "/CSharp/",
-      },
-      {
-        text: "F#",
-        link: "/FSharp/QuickStart",
-      },
-      {
-        text: "AspNetCore",
-        link: "/AspNetCore/",
-      },
-      {
-        text: "EntityFrameworkCore",
-        link: "/EntityFrameworkCore",
+        text: ".NET",
+        children: [
+          {
+            text: "C#",
+            link: "/CSharp/",
+          },
+          {
+            text: "F#",
+            link: "/FSharp/QuickStart",
+          },
+          {
+            text: "AspNetCore",
+            link: "/AspNetCore/",
+          },
+          {
+            text: "EF Core",
+            link: "/EntityFrameworkCore",
+          },
+        ]
       },
       {
         text:"客户端",
@@ -173,6 +173,10 @@ export default defineUserConfig({
             "/introduction",
           ],
         },
+        {
+          text: "dotNET平台下的AOT跨平台编译",
+          link: "/CSharp/CrossCompile"
+        }
       ],
       "/AspNetCore/": [
         {
@@ -253,13 +257,7 @@ export default defineUserConfig({
         "/Vue/VueApiStyle.md",
         "/Vue/VueTemplate.md",
       ],
-      "/Rust": [
-        "/Rust/variables.md",
-        "/Rust/DataTypes.md",
-        "/Rust/ControlFlow.md",
-        "/Rust/Ownership.md",
-        "/Rust/Struct.md",
-      ],
+      "/Rust": RustSidebar,
       "/Java/Maven": ["/Java/Maven/Install.md"],
       "/Java/SpringBoot": [
         "/Java/SpringBoot/Index.md",
