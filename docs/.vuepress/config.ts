@@ -6,7 +6,7 @@ export default defineUserConfig({
   bundler: viteBundler(),
   port: 4624,
   lang: "zh-CN",
-  title: "吴俊城",
+  title: "工作笔记",
   description: "知识的总结",
   theme: defaultTheme({
     // 在这里进行配置
@@ -71,6 +71,10 @@ export default defineUserConfig({
             text: "Kubernetes",
             link: "/Backend/Kubernetes/QuickStart.md",
           },
+          {
+            text:"RabbitMQ",
+            link:"/Backend/RabbitMQ/WorkPattern.md"
+          }
         ],
       },
       {
@@ -231,6 +235,10 @@ export default defineUserConfig({
       "/Backend/Docker/": [
         "/Backend/Docker/Install.md",
         "/Backend/Docker/QuickStart.md"
+      ],
+      "/Backend/RabbitMQ/": [
+        "/Backend/RabbitMQ/QuickStart.md",
+        "/Backend/RabbitMQ/WorkPattern.md",
       ],
       "/Linux": [
         "/Linux/Debian12Init.md",
