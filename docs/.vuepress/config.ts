@@ -7,7 +7,7 @@ export default defineUserConfig({
   bundler: viteBundler(),
   port: 4624,
   lang: "zh-CN",
-  title: "工作笔记",
+  title: "学习笔记",
   description: "知识的总结",
   theme: defaultTheme({
     // 在这里进行配置
